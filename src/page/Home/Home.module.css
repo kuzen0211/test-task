@@ -1,0 +1,38 @@
+.bg {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-image: url('../../components/image/bgHome.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+
+  border-radius: 10px;
+  background-color: #ebd8ff;
+
+  color: black;
+  font-size: 30px;
+  border-color: #ebd8ff;
+  border: 2px solid #ebd8ff;
+  text-decoration: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+
+  color: #ebd8ff;
+  background-color: #ae7be3;
+}

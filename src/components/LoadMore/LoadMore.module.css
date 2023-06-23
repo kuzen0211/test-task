@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin-bottom: 20px;
+
+  background: #ae7be3;
+  width: 196px;
+  border: none;
+  padding: 14px 28px 14px 28px;
+  border-radius: 10px;
+
+  box-shadow: 0px 3.4369285106658936px 3.4369285106658936px 0px
+    rgba(0, 0, 0, 0.25);
+
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #ae7be3;
+}
+
+.btn:hover {
+  cursor: pointer;
+
+  color: #ebd8ff;
+
+  border: 2px solid #4b2a99;
+}
