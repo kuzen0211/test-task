@@ -15,6 +15,7 @@ export const TweetsList = () => {
           tweets={tweets}
           followers={followers}
           avatar={avatar}
+          id={id}
         />
       ))}
       <LoadMore />

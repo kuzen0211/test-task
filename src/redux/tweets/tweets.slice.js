@@ -26,8 +26,12 @@ const tweetsSlice = createSlice({
       .addCase(update.pending, (state, _) => {
         state.isLoading = true;
       })
-      .addCase(update.fulfilled, (state, __) => {
+      .addCase(update.fulfilled, (state, payload) => {
         state.isLoading = false;
+        const { id, followers } = payload;
+        const idx = state.tweetsList.findIndex(tweet => tweet.id === id);
+        console.log('idx', idx);
+        state.tweetsList[idx] = { id, followers };
       })
       .addCase(update.rejected, (state, _) => {
         state.isLoading = false;

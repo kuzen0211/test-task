@@ -6,10 +6,10 @@ export const getTweets = async () => {
   return axios.get('/tweets?page=1&limit=3');
 };
 
-export const updateTweets = data => {
-  return axios.patch(`/tweets/${data.id}`, data.updatedTask);
+export const updateTweets = async (id, newFollowers) => {
+  return axios.put(`/tweets/${id}`, { followers: newFollowers });
 };
 
-export const load = (nextPage, itemsPerPage) => {
+export const load = async (nextPage, itemsPerPage) => {
   return axios.get(`/tweets?page=${nextPage}&limit=${itemsPerPage}`);
 };

@@ -11,6 +11,7 @@ export const LoadMore = () => {
     scroll.scrollToBottom();
     dispatch(loadMore());
   };
+
   return (
     <div className={styles.container}>
       <button
