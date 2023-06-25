@@ -8,12 +8,13 @@ export const TweetsList = () => {
 
   return (
     <>
-      {items.map(({ id, user, tweets, followers, avatar }) => (
+      {items.map(({ id, user, tweets, followers, avatar, followed }) => (
         <TweetsListItem
           key={id}
           user={user}
           tweets={tweets}
           followers={followers}
+          followed={followed}
           avatar={avatar}
           id={id}
         />

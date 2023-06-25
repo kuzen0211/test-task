@@ -3,11 +3,14 @@ import { useDispatch } from 'react-redux';
 import { get } from 'redux/tweets/tweets.operation';
 
 import { TweetsList } from 'components/TweetsList/TweetsList';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Tweets.module.css';
 
 const Tweets = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+
+  const backLink = location.state?.from ?? '/';
 
   useEffect(() => {
     dispatch(get());
@@ -15,7 +18,7 @@ const Tweets = () => {
 
   return (
     <>
-      <NavLink className={styles.btn} to={'/'}>
+      <NavLink className={styles.btn} to={backLink}>
         &#x293A; back
       </NavLink>
       <TweetsList />

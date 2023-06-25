@@ -5,7 +5,6 @@ import { getTweets, load, updateTweets } from '../../service/tweetsAPI';
 export const get = createAsyncThunk('tweets/get', async (_, thunkAPI) => {
   try {
     const { data } = await getTweets();
-    console.log(data);
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -14,11 +13,9 @@ export const get = createAsyncThunk('tweets/get', async (_, thunkAPI) => {
 
 export const update = createAsyncThunk(
   'tweets/update',
-  async ({ id, followers }, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const newFollowers = followers + 1;
-      const { data } = await updateTweets(id, newFollowers);
-
+      const { data } = await updateTweets(id);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
