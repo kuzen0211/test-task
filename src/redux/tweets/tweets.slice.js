@@ -25,7 +25,7 @@ const tweetsSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(update.pending, (state, _) => {
-        state.isLoading = true;
+        state.isLoading = false;
       })
       .addCase(update.fulfilled, (state, action) => {
         state.isLoading = false;
