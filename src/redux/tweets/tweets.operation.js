@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { getTweets, load, updateTweets } from '../../service/tweetsAPI';
 
@@ -39,3 +39,5 @@ export const loadMore = createAsyncThunk(
     }
   }
 );
+
+export const clearTweets = createAction('tweets/clearTweets');

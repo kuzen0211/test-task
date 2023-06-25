@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { get, loadMore, update } from './tweets.operation';
+import { clearTweets, get, loadMore, update } from './tweets.operation';
 
 const initialState = {
   tweetsList: [],
@@ -47,6 +47,11 @@ const tweetsSlice = createSlice({
       })
       .addCase(loadMore.rejected, (state, _) => {
         state.isLoading = false;
+      })
+      .addCase(clearTweets, state => {
+        state.tweetsList = [];
+        state.isLoading = false;
+        state.currentPage = 1;
       }),
 });
 

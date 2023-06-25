@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { get } from 'redux/tweets/tweets.operation';
 
 import { TweetsList } from 'components/TweetsList/TweetsList';
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Tweets.module.css';
+import { clearTweets, get } from 'redux/tweets/tweets.operation';
 
 const Tweets = () => {
   const dispatch = useDispatch();
@@ -16,12 +16,17 @@ const Tweets = () => {
     dispatch(get());
   }, [dispatch]);
 
+  const handleClick = () => {
+    dispatch(clearTweets());
+  };
   return (
     <>
-      <NavLink className={styles.btn} to={backLink}>
+      <NavLink className={styles.btn} to={backLink} onClick={handleClick}>
         &#x293A; back
       </NavLink>
-      <TweetsList />
+      <div className={styles.wraper}>
+        <TweetsList />
+      </div>
     </>
   );
 };
