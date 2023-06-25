@@ -6,6 +6,7 @@ const initialState = {
   isLoading: false,
   currentPage: 1,
   itemsPerPage: 3,
+  hasMoreData: true,
 };
 
 const tweetsSlice = createSlice({
@@ -44,6 +45,7 @@ const tweetsSlice = createSlice({
         state.tweetsList = [...state.tweetsList, ...action.payload];
         state.currentPage += 1;
         state.isLoading = false;
+        state.hasMoreData = action.payload.length > 0;
       })
       .addCase(loadMore.rejected, (state, _) => {
         state.isLoading = false;
@@ -52,6 +54,7 @@ const tweetsSlice = createSlice({
         state.tweetsList = [];
         state.isLoading = false;
         state.currentPage = 1;
+        state.hasMoreData = true;
       }),
 });
 

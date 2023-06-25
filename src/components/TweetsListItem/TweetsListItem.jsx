@@ -1,9 +1,10 @@
-import { ReactComponent as Logo } from '../image/logo.svg';
 import React from 'react';
-
-import styles from './TweetsListItem.module.css';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { update } from 'redux/tweets/tweets.operation';
+
+import styles from './TweetsListItem.module.css';
+import { ReactComponent as Logo } from '../image/logo.svg';
 
 export const TweetsListItem = ({
   user,
@@ -57,4 +58,13 @@ export const TweetsListItem = ({
       </div>
     </>
   );
+};
+
+TweetsListItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  user: PropTypes.string.isRequired,
+  tweets: PropTypes.number.isRequired,
+  followers: PropTypes.number.isRequired,
+  followed: PropTypes.bool.isRequired,
+  avatar: PropTypes.string.isRequired,
 };

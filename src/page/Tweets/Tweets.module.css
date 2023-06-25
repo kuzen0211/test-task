@@ -6,11 +6,16 @@
 }
 
 .btn {
-  display: block;
+  display: flex;
   margin-left: 60px;
   margin-top: 50px;
   margin-bottom: 20px;
   text-decoration-line: none;
   font-size: 20px;
-  z-index: 20;
+  width: 60px;
+  height: 30px;
+}
+.btn:hover {
+  transform: scale(1.3);
+  color: #5cd3a8;
 }
