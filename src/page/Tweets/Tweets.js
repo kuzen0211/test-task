@@ -22,7 +22,7 @@ const Tweets = () => {
   return (
     <>
       <NavLink className={styles.btn} to={backLink} onClick={handleClick}>
-        &#x293A; back
+        &#x293A;back
       </NavLink>
       <div className={styles.wraper}>
         <TweetsList />
